@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem - RPG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .attribute, .ability {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha de Personagem - RPG</h1>
+
+        <!-- Informações Gerais -->
+        <h2>Informações Gerais</h2>
+        <form>
+            <label for="playerName">Nome do Jogador:</label>
+            <input type="text" id="playerName" name="playerName">
+
+            <label for="characterName">Nome do Personagem:</label>
+            <input type="text" id="characterName" name="characterName">
+
+            <label for="race">Raça:</label>
+            <select id="race" name="race">
+                <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
+            </select>
+
+            <!-- Outros campos de informações gerais -->
+
+            <!-- Habilidades Especiais para Raças de Gatos -->
+            <h2>Habilidades Especiais para Raças de Gatos</h2>
+            <label for="specialAbility">Habilidade Especial:</label>
+            <select id="specialAbility" name="specialAbility">
+                <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
+            </select>
+
+            <!-- Outros campos de habilidades especiais -->
+
+            <!-- Adicione os outros campos do formulário conforme necessário -->
+
+            <button type="submit">Salvar Ficha</button>
+        </form>
+    </div>
+
+    <script>
+        // Lista de raças de gatos
+        const catRaces = [
+            "Persa", "Siamês", "Bengal", "Maine Coon", "Sphynx", "Ragdoll", "Abissínio", "British Shorthair",
+            "Scottish Fold", "Burmese", "Siamês Oriental", "Russian Blue", "Manx", "Angorá", "Bombay", "Cornish Rex",
+            "Devon Rex", "Exótico", "Tonquinês", "Nebelung", "Munchkin", "Norwegian Forest", "Turkish Van", "Balinês",
+            "Chartreux"
+        ];
+
+        // Lista de habilidades especiais para gatos
+        const catAbilities = [
+            "Visão Noturna Aprimorada", "Canto Encantador", "Camuflagem Urbana"
+            // Adicione outras habilidades conforme necessário
+        ];
+
+        // Preenche as opções de raça para gatos
+        const raceSelector = document.getElementById("race");
+        catRaces.forEach(race => {
+            const option = document.createElement("option");
+            option.value = race.toLowerCase();
+            option.text = race;
+            raceSelector.add(option);
+        });
+
+        // Preenche as opções de habilidades especiais para gatos
+        const abilitySelector = document.getElementById("specialAbility");
+        catAbilities.forEach(ability => {
+            const option = document.createElement("option");
+            option.value = ability.toLowerCase();
+            option.text = ability;
+            abilitySelector.add(option);
+        });
+    </script>
+</body>
+</html>
